@@ -1,17 +1,55 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+const data =
+  [
+    ['2000', 174],
+    ['2001', 65],
+    ['2002', 51],
+    ['2003', 61],
+    ['2004', 59],
+    ['2005', 104],
+    ['2006', 207],
+    ['2007', 246],
+    ['2008', 360],
+    ['2009', 157],
+    ['2010', 64],
+    ['2011', 154],
+    ['2012', 290],
+    ['2013', 132],
+    ['2014', 66],
+    ['2015', 42],
+    ['2016', 205],
+    ['2017', 398],
+    ['2018', 118],
+    ['2019', 154],
+    ['2020', 180],
+  ]
+
+const options = {
+  chart: {
+    type: 'spline'
+  },
+  title: {
+    text: 'U.S. Tornadoes: January - March'
+  },
+  series: [
+    {
+      data: data
+    }
+
+  ]
+};
+
+
+
+const App = () => (
+  <div>
+    <HighchartsReact highcharts={Highcharts} options={options} />
+  </div>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(<App />, document.getElementById('root'));

@@ -36,6 +36,14 @@ const options = {
   title: {
     text: 'U.S. Tornadoes: January - March'
   },
+  xAxis: {
+    title: { text: 'year' },
+    labels: {
+      formatter: function () {
+        return data[this.pos][0]
+      }
+    }
+  },
   series: [
     {
       data: data
@@ -49,7 +57,7 @@ const options = {
 const App = () => (
   <div>
     <HighchartsReact highcharts={Highcharts} options={options} />
-  </div>
+  </div >
 );
 
 render(<App />, document.getElementById('root'));

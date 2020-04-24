@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import './index.css'
 
 
 const data =
@@ -37,11 +38,20 @@ const options = {
     text: '<h2 className="graph__title">U.S. Tornadoes</h2>',
     align: 'left',
     allowHTML: true,
+    margin: 24,
+    style: {
+      color: '#777777',
+      fontWeight: 'bold'
+    }
   },
   subtitle: {
-    text: 'January - March',
+    text: 'January-March',
     align: 'left',
-    style: { 'color': 'blue' }
+    style: {
+      color: 'rgb(170, 170, 170)',
+      fontWeight: 'bold',
+      fontSize: '14px',
+    }
   },
   xAxis: {
     title: { text: 'Year' },
@@ -49,7 +59,7 @@ const options = {
       formatter: function () {
         if (data.length > 0) {
           return data[this.pos][0]
-        }
+        } else { return '' }
       }
     }
   },

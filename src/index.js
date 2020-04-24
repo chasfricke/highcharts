@@ -4,6 +4,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import './index.css'
 
+//https://codepen.io/chasfricke/pen/BaoWPQJ
 
 const data =
   [
@@ -27,8 +28,9 @@ const data =
     ['2017', 398],
     ['2018', 118],
     ['2019', 154],
-    ['2020', 180],
   ]
+
+const data2 = [['2020', 180]]
 
 const options = {
   chart: {
@@ -54,21 +56,29 @@ const options = {
     }
   },
   xAxis: {
-    title: { text: 'Year' },
     labels: {
       formatter: function () {
         if (data.length > 0) {
           return data[this.pos][0]
         } else { return '' }
+      },
+      style: {
+        fontSize: '12px'
       }
     }
   },
   yAxis: {
     title: { text: 'Tornado Count' }
   },
+
   series: [
     {
-      data: data
+      data: data,
+      name: 'Final Count'
+    },
+    {
+      data: data2,
+      name: 'Preliminary'
     }
   ]
 };

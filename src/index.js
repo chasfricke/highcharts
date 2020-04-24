@@ -31,24 +31,35 @@ const data =
 
 const options = {
   chart: {
-    type: 'spline'
+    type: 'column'
   },
   title: {
-    text: 'U.S. Tornadoes: January - March'
+    text: '<h2 className="graph__title">U.S. Tornadoes</h2>',
+    align: 'left',
+    allowHTML: true,
+  },
+  subtitle: {
+    text: 'January - March',
+    align: 'left',
+    style: { 'color': 'blue' }
   },
   xAxis: {
-    title: { text: 'year' },
+    title: { text: 'Year' },
     labels: {
       formatter: function () {
-        return data[this.pos][0]
+        if (data.length > 0) {
+          return data[this.pos][0]
+        }
       }
     }
+  },
+  yAxis: {
+    title: { text: 'Tornado Count' }
   },
   series: [
     {
       data: data
     }
-
   ]
 };
 

@@ -71,6 +71,12 @@ const options = {
   yAxis: {
     title: { text: 'Tornado Count' }
   },
+  plotOptions: {
+    column: {
+      grouping: false,
+    }
+
+  },
 
   series: [
     {

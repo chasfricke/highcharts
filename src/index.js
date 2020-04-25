@@ -58,8 +58,8 @@ const options = {
   xAxis: {
     labels: {
       formatter: function () {
-        if (data.length) {
-          return data[0][0]
+        if (data[this.value]) {
+          return data[this.value][0]
         } else { return '' }
       },
       style: {
@@ -98,7 +98,8 @@ const options = {
 
   series: [
     {
-      data: data.slice(0, -1),
+      // data: data.slice(0, -1),
+      data: data,
       name: 'Final Count',
     },
     {

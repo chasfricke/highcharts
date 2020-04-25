@@ -70,6 +70,11 @@ const options = {
   yAxis: {
     title: { text: 'Tornado Count' }
   },
+  legend: {
+    align: 'right',
+    verticalAlign: 'top',
+    symbolRadius: 0,
+  },
   plotOptions: {
     column: {
       grouping: false,

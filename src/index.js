@@ -89,24 +89,20 @@ const options = {
 
   },
   tooltip: {
-    headerFormat: 'Jan-March {point.key}<br/>',
+    headerFormat: `<span>Jan-March {point.key}</span><br/>`,
     pointFormat: '{series.name}: {point.y}',
     followPointer: true,
-
-
   },
 
   series: [
     {
-      // data: data.slice(0, -1),
       data: data,
       name: 'Final Count',
     },
     {
-      data: data.pop(),
+      data: data[(data.length - 1)],
       name: 'Preliminary',
       pointStart: 19,
-
     }
   ]
 };

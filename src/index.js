@@ -73,6 +73,13 @@ const options = {
   plotOptions: {
     column: {
       grouping: false,
+    },
+    series: {
+      states: {
+        inactive: {
+          opacity: 1
+        }
+      }
     }
 
   },

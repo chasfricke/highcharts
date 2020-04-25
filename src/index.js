@@ -28,6 +28,7 @@ const data =
     ['2017', 398],
     ['2018', 118],
     ['2019', 154],
+    ['2020', 180]
   ]
 
 const data2 = [['2020', 180]]
@@ -58,8 +59,8 @@ const options = {
   xAxis: {
     labels: {
       formatter: function () {
-        if (data.length > 0) {
-          return data[this.pos][0]
+        if (data.length) {
+          return data[0][0]
         } else { return '' }
       },
       style: {
@@ -73,12 +74,14 @@ const options = {
 
   series: [
     {
-      data: data,
-      name: 'Final Count'
+      data: data.slice(0, -1),
+      name: 'Final Count',
     },
     {
-      data: data2,
-      name: 'Preliminary'
+      data: data.pop(),
+      name: 'Preliminary',
+      pointStart: 19,
+
     }
   ]
 };

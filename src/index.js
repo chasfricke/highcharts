@@ -5,6 +5,7 @@ import HighchartsReact from 'highcharts-react-official';
 import './index.css'
 
 //https://codepen.io/chasfricke/pen/BaoWPQJ
+//https://www.ncdc.noaa.gov/sotc/tornadoes/202003
 
 const data =
   [
@@ -30,8 +31,6 @@ const data =
     ['2019', 154],
     ['2020', 180]
   ]
-
-const data2 = [['2020', 180]]
 
 const options = {
   chart: {
@@ -75,6 +74,13 @@ const options = {
     column: {
       grouping: false,
     }
+
+  },
+  tooltip: {
+    headerFormat: 'Jan-March {point.key}<br/>',
+    pointFormat: '{series.name}: {point.y}',
+    followPointer: true,
+
 
   },
 
